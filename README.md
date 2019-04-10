@@ -7,8 +7,7 @@ common golang benchmarks
 git clone https://github.com/shohi/go-benchmark
 cd go-benchmark
 
-dep ensure
-
+export GO111MODULE=on
 go test -benchmem -run=^$ -bench ./...
 
 ```
