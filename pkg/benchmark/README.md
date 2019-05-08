@@ -33,3 +33,20 @@ PASS
 ok  	github.com/shohi/go-benchmark/pkg/benchmark	226.269
 
 ```
+
+## Bytes
+
+```
+version: go1.12.4
+
+goos: darwin
+goarch: amd64
+pkg: github.com/shohi/go-benchmark/pkg/benchmark
+BenchmarkBytes/StringToBytes-8         	50000000	        23.0 ns/op	       8 B/op	       1 allocs/op
+BenchmarkBytes/BytesToString-Plain-8   	100000000	        17.5 ns/op	       5 B/op	       1 allocs/op
+BenchmarkBytes/BytesToString-Reflect-8 	500000000	         3.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBytes/BytesToString-Cast-8    	1000000000	         2.01 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/shohi/go-benchmark/pkg/benchmark	7.041s
+
+```
