@@ -50,3 +50,19 @@ PASS
 ok  	github.com/shohi/go-benchmark/pkg/benchmark	7.041s
 
 ```
+
+
+## Date
+
+```
+version: go1.12.4
+
+goos: darwin
+goarch: amd64
+pkg: github.com/shohi/go-benchmark/pkg/benchmark
+BenchmarkDateParse/Time-8         	10000000	       144 ns/op	     112 B/op	       2 allocs/op
+BenchmarkDateParse/JinzhuNow-8    	  300000	      5854 ns/op	    2087 B/op	      35 allocs/op
+PASS
+ok  	github.com/shohi/go-benchmark/pkg/benchmark	3.413s
+
+```
