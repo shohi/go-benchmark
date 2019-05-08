@@ -6,7 +6,13 @@ import (
 )
 
 // refer, https://github.com/jeromefroe/golang_benchmarks/blob/master/defer_test.go
-func BenchmarkMutexDeferUnlock(b *testing.B) {
+
+func BenchmarkDefer(b *testing.B) {
+	b.Run("MutexDeferUnlock", benchMutexDeferUnlock)
+	b.Run("MutexUnlock", benchMutexUnlock)
+}
+
+func benchMutexDeferUnlock(b *testing.B) {
 	var mu sync.Mutex
 	for i := 0; i < b.N; i++ {
 		func() {
@@ -16,7 +22,7 @@ func BenchmarkMutexDeferUnlock(b *testing.B) {
 	}
 }
 
-func BenchmarkMutexUnlock(b *testing.B) {
+func benchMutexUnlock(b *testing.B) {
 	var mu sync.Mutex
 	for i := 0; i < b.N; i++ {
 		func() {
