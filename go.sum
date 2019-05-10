@@ -1,2 +1,4 @@
 github.com/jinzhu/now v1.0.0 h1:6WV8LvwPpDhKjo5U9O6b4+xdG/jTXNPwlDme/MTo8Ns=
 github.com/jinzhu/now v1.0.0/go.mod h1:oHTiXerJ20+SfYcrdlBO7rzZRJWGwSTQ0iUY2jI6Gfc=
+github.com/jolestar/go-commons-pool v2.0.1-0.20190415034621-5cc5d37d092a+incompatible h1:1pUqhqBnwRbpg3HeszWDgIEd9X9D0/D9OYc4YRLKotA=
+github.com/jolestar/go-commons-pool v2.0.1-0.20190415034621-5cc5d37d092a+incompatible/go.mod h1:ChJYIbIch0DMCSU6VU0t0xhPoWDR2mMFIQek3XWU0s8=

@@ -66,3 +66,18 @@ PASS
 ok  	github.com/shohi/go-benchmark/pkg/benchmark	3.413s
 
 ```
+
+## Pool
+
+```
+version: go1.12.4
+
+goos: darwin
+goarch: amd64
+pkg: github.com/shohi/go-benchmark/pkg/benchmark
+BenchmarkPool/sync-8         	    3000	    370376 ns/op	  553408 B/op	    1012 allocs/op
+BenchmarkPool/commons-8      	    3000	    560896 ns/op	   16223 B/op	     500 allocs/op
+PASS
+ok  	github.com/shohi/go-benchmark/pkg/benchmark	3.037s
+
+```
