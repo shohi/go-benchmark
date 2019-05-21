@@ -9,6 +9,7 @@ import (
 	"testing"
 
 	pool "github.com/jolestar/go-commons-pool"
+	ipool "github.com/shohi/gocode/pkg/pool"
 )
 
 // refer, https://github.com/golang/go/issues/22950
@@ -22,6 +23,29 @@ func BenchmarkPool(b *testing.B) {
 	b.Run("commons", func(b *testing.B) {
 		benchCommonsPool(a[:], z[:], b)
 	})
+
+	b.Run("ring", func(b *testing.B) {
+		benchRingPool(a[:], z[:], b)
+	})
+}
+
+func benchRingPool(a, z []*bytes.Buffer, b *testing.B) {
+	p := ipool.NewRingPool(func() interface{} {
+		return bytes.NewBuffer(make([]byte, 0, 1024))
+	})
+
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		for j := 0; j < len(a); j++ {
+			a[j] = p.Get().(*bytes.Buffer)
+		}
+		for j := 0; j < len(a); j++ {
+			p.Put(a[j])
+		}
+		a = z
+		runtime.GC()
+	}
 }
 
 func benchSyncPool(a, z []*bytes.Buffer, b *testing.B) {
