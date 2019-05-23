@@ -81,3 +81,19 @@ PASS
 ok  	github.com/shohi/go-benchmark/pkg/benchmark	3.037s
 
 ```
+
+## IntToString
+
+```
+version: go1.12.5
+
+goos: darwin
+goarch: amd64
+pkg: github.com/shohi/go-benchmark/pkg/benchmark
+BenchmarkIntToString/fmt.Sprintf-8         	10000000	       123 ns/op	      40 B/op	       2 allocs/op
+BenchmarkIntToString/fmt.Sprint-8          	10000000	       118 ns/op	      40 B/op	       2 allocs/op
+BenchmarkIntToString/strconv.FormatInt-8   	30000000	        48.1 ns/op	      32 B/op	       1 allocs/op
+PASS
+ok  	github.com/shohi/go-benchmark/pkg/benchmark	4.191s
+
+```

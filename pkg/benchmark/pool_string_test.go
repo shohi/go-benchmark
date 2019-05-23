@@ -85,7 +85,6 @@ func newCommonsPool(fn func() interface{}) *pool.ObjectPool {
 }
 
 func newSyncPool(fn func() interface{}) *sync.Pool {
-
 	return &sync.Pool{
 		New: fn,
 	}

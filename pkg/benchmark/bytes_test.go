@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"reflect"
 	"runtime"
+	"strings"
 	"testing"
 	"unsafe"
 )
@@ -34,8 +35,11 @@ func stringToBytes(s string) []byte {
 }
 
 func BenchmarkBytes(b *testing.B) {
+
+	var testStr = strings.Repeat("x", 100)
+	var testBytes = []byte(testStr)
+
 	b.Run("StringToBytes", func(b *testing.B) {
-		testStr := "hello"
 		var result []byte
 		for i := 0; i < b.N; i++ {
 			result = stringToBytes(testStr)
@@ -54,7 +58,7 @@ func BenchmarkBytes(b *testing.B) {
 
 	for _, c := range cases {
 		b.Run(fmt.Sprintf("BytesToString-%v", c.name), func(b *testing.B) {
-			testBytes := []byte("hello")
+
 			var result string
 			for i := 0; i < b.N; i++ {
 				result = c.fn(testBytes)
