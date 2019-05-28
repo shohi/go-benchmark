@@ -30,7 +30,7 @@ func BenchmarkPool(b *testing.B) {
 }
 
 func benchRingPool(a, z []*bytes.Buffer, b *testing.B) {
-	p := ipool.NewRingPool(func() interface{} {
+	p := ipool.NewFixedPool(1024, func() interface{} {
 		return bytes.NewBuffer(make([]byte, 0, 1024))
 	})
 
