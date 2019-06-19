@@ -27,10 +27,33 @@ func BenchmarkPool(b *testing.B) {
 	b.Run("ring", func(b *testing.B) {
 		benchRingPool(a[:], z[:], b)
 	})
+
+	b.Run("channel", func(b *testing.B) {
+		benchRingPool(a[:], z[:], b)
+	})
 }
 
 func benchRingPool(a, z []*bytes.Buffer, b *testing.B) {
 	p := ipool.NewFixedPool(1024, func() interface{} {
+		return bytes.NewBuffer(make([]byte, 0, 1024))
+	})
+
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		for j := 0; j < len(a); j++ {
+			a[j] = p.Get().(*bytes.Buffer)
+		}
+		for j := 0; j < len(a); j++ {
+			p.Put(a[j])
+		}
+		a = z
+		runtime.GC()
+	}
+}
+
+func benchChannelPool(a, z []*bytes.Buffer, b *testing.B) {
+	p := ipool.NewFixedPool2(1024, func() interface{} {
 		return bytes.NewBuffer(make([]byte, 0, 1024))
 	})
 
