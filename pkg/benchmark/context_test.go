@@ -31,8 +31,9 @@ func benchContextWithoutCancel(b *testing.B) {
 	var ch <-chan struct{}
 
 	for i := 0; i < b.N; i++ {
-		ctx, _ := context.WithTimeout(bgCtx, 10*time.Millisecond)
+		ctx, cancel := context.WithTimeout(bgCtx, 10*time.Millisecond)
 		ch = ctx.Done()
+		_ = cancel
 	}
 
 	_ = ch

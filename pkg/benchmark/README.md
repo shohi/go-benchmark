@@ -93,3 +93,23 @@ BenchmarkIntToString/strconv.FormatInt-8   	30000000	        48.1 ns/op	      32
 PASS
 ok  	github.com/shohi/go-benchmark/pkg/benchmark	4.191s
 ```
+
+## StringJoin
+
+```
+version: go1.12.6
+
+goos: darwin
+goarch: amd64
+pkg: github.com/shohi/go-benchmark/pkg/benchmark
+BenchmarkStringJoin/join-8         	20000000	        69.4 ns/op	      16 B/op	       1 allocs/op
+BenchmarkStringJoin/sprintf-8      	 5000000	       348 ns/op	      96 B/op	       6 allocs/op
+BenchmarkStringJoin/builder-8      	20000000	        77.6 ns/op	      24 B/op	       2 allocs/op
+BenchmarkStringJoin/concat-8       	10000000	       173 ns/op	      32 B/op	       4 allocs/op
+BenchmarkStringJoin/concat-oneline-8         	20000000	        63.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringJoin/buffer-8                 	20000000	        88.1 ns/op	      64 B/op	       1 allocs/op
+BenchmarkStringJoin/buffer-reset-8           	30000000	        53.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStringJoin/buffer-fprintf-8         	 5000000	       330 ns/op	      80 B/op	       5 allocs/op
+PASS
+ok  	github.com/shohi/go-benchmark/pkg/benchmark	13.943s
+```
