@@ -7,6 +7,7 @@
 package main
 
 import (
+	"flag"
 	"io/ioutil"
 	"log"
 	"os"
@@ -26,6 +27,10 @@ func main() {
 	tplStr, err := ioutil.ReadFile("switch_test.tpl")
 	die(err)
 
+	var count int
+	flag.IntVar(&count, "count", 100, "key space size")
+	flag.Parse()
+
 	// NOTE: template.ParseFiles does not work here.
 	// And also note that `TxtFuncMap` should be used along `text/template`,
 	// as `html/template` will escape the content.
@@ -33,7 +38,6 @@ func main() {
 		Funcs(sprig.TxtFuncMap()).
 		Parse(string(tplStr)))
 
-	count := 100
 	// tpl.Execute(os.Stdout, count)
 	tpl.Execute(f, count)
 }

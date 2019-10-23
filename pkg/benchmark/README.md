@@ -113,3 +113,18 @@ BenchmarkStringJoin/buffer-fprintf-8         	 5000000	       330 ns/op	      80
 PASS
 ok  	github.com/shohi/go-benchmark/pkg/benchmark	13.943s
 ```
+
+## Read
+
+```
+go version go1.13 darwin/amd64
+
+pkg: github.com/shohi/go-benchmark/pkg/benchmark
+BenchmarkReadConcrete-8    	1000000000	         0.267 ns/op	       0 B/op	       0 allocs/op
+BenchmarkReadInterface-8   	31164573	        37.0 ns/op	     112 B/op	       1 allocs/op
+BenchmarkReadNoEscape-8    	100000000	        10.4 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/shohi/go-benchmark/pkg/benchmark	2.951s
+```
+
+refer, https://github.com/lukechampine/noescape
