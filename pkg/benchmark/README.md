@@ -99,7 +99,6 @@ refer, https://github.com/lukechampine/noescape
 ```
 go version go1.13 darwin/amd64
 
-pkg: github.com/shohi/go-benchmark/pkg/benchmark
 BenchmarkSwitchString/FromSwitch-8         	18041079	        66.6 ns/op	       0 B/op	       0 allocs/op
 BenchmarkSwitchString/FromMap-8            	42159949	        26.8 ns/op	       0 B/op	       0 allocs/op
 BenchmarkSwitchString/FromRedix-8          	 9148819	       130 ns/op	       0 B/op	       0 allocs/op
@@ -107,8 +106,6 @@ BenchmarkSwitchString/FromiRedix-8         	 8326143	       143 ns/op	       0 B
 BenchmarkSwitchInt/FromSwith-8             	94503271	        11.5 ns/op	       0 B/op	       0 allocs/op
 BenchmarkSwitchInt/FromMap-8               	49495755	        23.0 ns/op	       0 B/op	       0 allocs/op
 BenchmarkSwitchInt/FromSlice-8             	100000000	        10.4 ns/op	       0 B/op	       0 allocs/op
-PASS
-ok  	github.com/shohi/go-benchmark/pkg/benchmark	8.813s
 ```
 
 ## Chan

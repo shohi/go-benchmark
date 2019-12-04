@@ -12,6 +12,10 @@ go test -benchmem -run=^$ -bench ./...
 
 ```
 
+## Result
+
+[Result](pkg/benchmark/README.md)
+
 
 ## Thanks
 
