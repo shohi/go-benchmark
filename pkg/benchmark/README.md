@@ -145,3 +145,28 @@ BenchmarkSwitchInt/FromSlice-8             	100000000	        10.4 ns/op	       
 PASS
 ok  	github.com/shohi/go-benchmark/pkg/benchmark	8.813s
 ```
+
+## Select
+
+```
+go version go1.13 darwin/amd64
+
+pkg: github.com/shohi/go-benchmark/pkg/benchmark
+BenchmarkSelect/Contention-0-8         	174359425	         7.28 ns/op
+BenchmarkSelect/Contention-50-8        	131247832	         7.75 ns/op
+BenchmarkSelect/Contention-100-8       	155191272	         8.86 ns/op
+PASS
+ok  	github.com/shohi/go-benchmark/pkg/benchmark	6.979s
+```
+
+## CAS
+
+```
+go version go1.13 darwin/amd64
+
+pkg: github.com/shohi/go-benchmark/pkg/benchmark
+BenchmarkCAS/int32-8         	98189749	        11.5 ns/op
+BenchmarkCAS/int64-8         	96007542	        11.7 ns/op
+PASS
+ok  	github.com/shohi/go-benchmark/pkg/benchmark	3.156s
+```
