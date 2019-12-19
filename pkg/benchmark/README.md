@@ -139,3 +139,11 @@ BenchmarkChanChan-8     	25154895	        46.1 ns/op	       0 B/op	       0 allo
 ```
 
 refer, https://gist.github.com/atotto/9342938
+
+## File
+
+```
+go version go1.13.5 darwin/amd64
+
+BenchmarkFileOpenClose_ZeroSize-8   	  106500	     10967 ns/op	     136 B/op	       3 allocs/op
+```
