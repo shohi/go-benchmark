@@ -147,3 +147,11 @@ go version go1.13.5 darwin/amd64
 
 BenchmarkFileOpenClose_ZeroSize-8   	  106500	     10967 ns/op	     136 B/op	       3 allocs/op
 ```
+
+## Time
+
+```
+go version go1.13.5 darwin/amd64
+
+BenchmarkTimeNow-8   	13513444	        87.2 ns/op	       0 B/op	       0 allocs/op
+```
