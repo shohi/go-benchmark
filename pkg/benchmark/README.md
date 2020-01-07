@@ -155,3 +155,14 @@ go version go1.13.5 darwin/amd64
 
 BenchmarkTimeNow-8   	13513444	        87.2 ns/op	       0 B/op	       0 allocs/op
 ```
+
+## Compression
+
+```
+go version go1.13.5 darwin/amd64
+
+BenchmarkCompression/LZ4-compress-8         	   23935	     48005 ns/op	  524433 B/op	       2 allocs/op
+BenchmarkCompression/LZ4-uncompress-8       	 5957702	       196 ns/op	    1024 B/op	       1 allocs/op
+BenchmarkCompression/GZIP-compress-8        	    8546	    126498 ns/op	  814227 B/op	      20 allocs/op
+BenchmarkCompression/GZIP-uncompress-8      	  107000	     10788 ns/op	   46000 B/op	      11 allocs/op
+```
