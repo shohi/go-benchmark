@@ -3,6 +3,7 @@ module github.com/shohi/go-benchmark
 go 1.13
 
 require (
+	github.com/acomagu/bufpipe v1.0.3
 	github.com/armon/go-radix v1.0.0
 	github.com/fortytw2/leaktest v1.3.0 // indirect
 	github.com/hashicorp/go-immutable-radix v1.0.0
