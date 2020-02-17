@@ -27,6 +27,7 @@ func BenchmarkMapKeys(b *testing.B) {
 		keysFn func(map[string]int) []string
 	}{
 		{"traverse", keysTraverse},
+		{"append", keysAppend},
 		{"reflect", keysReflect},
 	}
 
@@ -41,6 +42,15 @@ func BenchmarkMapKeys(b *testing.B) {
 		})
 	}
 
+}
+
+func keysAppend(m map[string]int) []string {
+	keys := make([]string, 0, len(m))
+	for key := range m {
+		keys = append(keys, key)
+	}
+
+	return keys
 }
 
 func keysTraverse(m map[string]int) []string {
