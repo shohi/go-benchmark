@@ -166,3 +166,13 @@ BenchmarkCompression/LZ4-uncompress-8       	 5957702	       196 ns/op	    1024 
 BenchmarkCompression/GZIP-compress-8        	    8546	    126498 ns/op	  814227 B/op	      20 allocs/op
 BenchmarkCompression/GZIP-uncompress-8      	  107000	     10788 ns/op	   46000 B/op	      11 allocs/op
 ```
+
+## String Match
+
+```
+go version go1.13.5 darwin/amd64
+
+BenchmarkMatch/Contains-8         	122922764	         9.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMatch/Glob-8             	110756569	        10.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMatch/Regexp-8           	 2395984	       458 ns/op	       0 B/op	       0 allocs/op
+```
