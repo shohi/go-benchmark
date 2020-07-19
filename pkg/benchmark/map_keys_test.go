@@ -21,7 +21,7 @@ func newMapForBenchmark(sz int) map[string]int {
 }
 
 func BenchmarkMapKeys(b *testing.B) {
-	m := newMapForBenchmark(100_1000)
+	m := newMapForBenchmark(1001000)
 	cases := []struct {
 		name   string
 		keysFn func(map[string]int) []string

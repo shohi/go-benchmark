@@ -11,6 +11,7 @@ require (
 	github.com/jinzhu/now v1.1.1
 	github.com/jolestar/go-commons-pool v2.0.1-0.20190415034621-5cc5d37d092a+incompatible
 	github.com/lukechampine/noescape v0.0.0-20191006153127-214c369a3d1b
+	github.com/orcaman/concurrent-map v0.0.0-20190826125027-8c72a8bb44f6
 	github.com/shohi/gocode v0.0.0
 )
 
